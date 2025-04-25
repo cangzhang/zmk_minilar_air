@@ -1,0 +1,4 @@
+config SHIELD_MINILA_AIR
+    bool "Minila Air"
+    default y
+    depends on SHIELD

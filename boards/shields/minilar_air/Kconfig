@@ -1,3 +1,0 @@
-config ZMK_KEYBOARD_MINILA_AIR
-    bool "Minila Air"
-    default y

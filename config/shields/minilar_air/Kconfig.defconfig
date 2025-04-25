@@ -1,0 +1,25 @@
+# Kconfig.defconfig for minila_air shield
+
+if SHIELD_MINILA_AIR
+
+# 启用 HID over GATT（蓝牙键盘）
+CONFIG_ZMK_BLE=y
+
+# 启用电池电量检测（如果有供电电路）
+CONFIG_ZMK_POWER_MANAGER=y
+
+# 启用 USB HID（插线模式）
+CONFIG_ZMK_USB=y
+
+# 启用键盘扫描
+CONFIG_ZMK_KSCAN_MATRIX=y
+
+# 如果你使用 74HC595 行驱动，请启用这个模块
+CONFIG_ZMK_KSCAN_74HC595=y
+
+# 如果你需要 debug log，可以启用这项（建议测试时打开）
+CONFIG_LOG=y
+CONFIG_LOG_MODE_DEFERRED=y
+CONFIG_LOG_DEFAULT_LEVEL=3
+
+endif
