@@ -1,0 +1,17 @@
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+                &kp Q &kp W &kp E &kp R &kp U &kp I &kp O &kp P &mo 1 &kp GRAVE &kp BSPC
+                &kp TAB &kp CAPS &kp T &kp Y &kp J &kp K &kp L &kp LBKT &mo 1 &kp RET &kp LSHFT
+                &kp A &kp S &kp D &kp F &kp H &kp COMMA &kp DOT &kp SEMI &kp SQT &kp LALT &kp SPC &kp WIN &kp RSHFT
+                &kp ESC &kp G &kp KP_PLUS &kp BSLS &kp ENTER
+                &kp Z &kp X &kp C &kp V &kp M &kp SLASH &kp RALT &kp DOWN &kp RIGHT &kp APP &kp LEFT
+                &kp 6 &kp 7 &kp 8 &kp 9
+                &kp LCTRL &kp 1 &kp 2 &kp 3 &kp 4
+            >;
+        };
+    };
+};

@@ -1,6 +1,30 @@
-name: Build ZMK firmware
-on: [push, pull_request, workflow_dispatch]
+name: Build Firmware
+
+on:
+  push:
+    branches: [main]
 
 jobs:
   build:
-    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+    name: Build ZMK firmware
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        shield:
+          - minila_air
+        board:
+          - nice_nano_v2  # 或你实际的 board，如 nrf52840dk_nrf52840
+    steps:
+      - uses: actions/checkout@v3
+      - name: Cache west
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.west
+            ~/zephyrproject
+          key: ${{ runner.os }}-west
+      - name: Setup
+        uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+        with:
+          board: ${{ matrix.board }}
+          shield: ${{ matrix.shield }}
